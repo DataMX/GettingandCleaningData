@@ -16,7 +16,7 @@ The *run_analysis.r* script assumes that you have downloaded the above data into
   
 The *run_analysis.r* script assumes you have the *data.tables, tidyr, dplyr and R.utils* packages installed and will load those librarys for you.
   
-The *run_analysis.r* script will complete all the steps required in the course project webpage.  Instructions as taken directly from course project.
+The *run_analysis.r* script will complete all the steps required in the course project webpage.  Instructions below are directly from [course project webpage descrition.](https://class.coursera.org/getdata-008/human_grading/view/courses/972586/assessments/3/submissions)
   
     1. Merges the training and the test sets to create one data set.
     2. Extracts only the measurements on the mean and standard deviation for

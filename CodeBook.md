@@ -20,13 +20,13 @@ Data processing with the *run_analysis.r* script did the following steps:
 2) Read in training *(train/X_train.txt)* and then test *(test/X_test.txt)* processed data without ids or activity data.  Script does not read in raw data as it's not used in the script.  Combine the test and training using *rbind*.  
   
 3) Read in column names located in *features.txt*. Use subsetting and *gsub* command to make column names more descriptive and Human readable.  I used *gsub* to do the following:
-      -   Change all occurances of mean and std to the same format and expand std to StandardDeviation
-      -   Remove () and - for easier column selection in R
-      -   Expand t to Time and F to Frequency 
-      -   Replace Acc with Acceleration, Gyro with AngularVelocity, Mag with Magnitude
-      -   Replace - with 'In'
-      -   Adjust remaining names to CamelCase for better Human readability without spaces
-      -   Replace (angles, gravity) etc. with _angles.gravity_ for easier column selection 
+      *   Change all occurances of mean and std to the same format and expand std to StandardDeviation
+      *   Remove () and - for easier column selection in R
+      *   Expand t to Time and F to Frequency 
+      *   Replace Acc with Acceleration, Gyro with AngularVelocity, Mag with Magnitude
+      *   Replace - with 'In'
+      *   Adjust remaining names to CamelCase for better Human readability without spaces
+      *   Replace (angles, gravity) etc. with _angles.gravity_ for easier column selection 
         
 4) Change column names of data set to match column names derived from *features.txt*.
         

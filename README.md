@@ -28,7 +28,7 @@ The *run_analysis.r* script will complete all the steps required in the course p
     
 The tidy data set is written out in the "UCI HAR Dataset" directory  as *GettingandCleaningData.txt*  
 
-Use *read.table("GettingandCleaningData.txt", header = TRUE)* to read the Tidy Data Table of means into R.
+Use **read.table("GettingandCleaningData.txt", header = TRUE)** to read the Tidy Data Table of means into R.
 Additional details of the *run_analysis.r* script can be found in the *CodeBook.md.*
 
 

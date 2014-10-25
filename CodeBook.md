@@ -18,7 +18,7 @@ Data processing with the *run_analysis.r* script did the following steps:
 1) Check that the "UCI HAR Dataset" directory is in the working directory and then change into the "UCI HAR Dataset" directory.  
     
 2) Read in training *(train/X_train.txt)* and then test *(test/X_test.txt)* processed data sets without ids or activity data.  Script does not read in raw data as it's not used in the script.  Combine the test and training sets using *rbind*.  
- (Instruction step 1)
+ (Instruction Step 1)
   
 3) Read in column names located in *features.txt*. Use subsetting and *gsub* command to make column names more descriptive and Human readable. (Instruction Step 4)  I used *gsub* to do the following: 
 *   Change all occurances of mean and std to the same format and expand std to StandardDeviation
@@ -44,7 +44,7 @@ Now, I have a tidy, descriptively named, complete data set with mean and standar
 
 10) Generate new table containing means of each column by "SubjectID" and by "ActivityType"  This step used chaining and dplyr to group the data by SubjectId and by ActivityType and then calculated the mean of each column. (Instruction Step 5)
       
-11) Write out table to *GettingandCleaningData.txt* in "UCI HAR Dataset" directory.          
+11) Write out table to *GettingandCleaningData.txt* in "UCI HAR Dataset" directory. (Instruction Step 5 for upload to Coursera)          
 Table can be read with 'read.table("GettingandCleaningData.txt", header = TRUE)'
 
 

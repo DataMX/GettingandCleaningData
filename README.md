@@ -26,10 +26,10 @@ The *run_analysis.r* script will complete all the steps required in the course p
     5. From the data set in step 4, creates a second, independent tidy data 
     set with the average of each variable for each activity and each subject. 
     
-The tidy data set is written out in the "UCI HAR Dataset" directory  as *GettingandCleaningData.txt*  
+The tidy data set is written out in the "UCI HAR Dataset" directory  as *GettingandCleaningData.txt*. 
 
 Use **read.table("GettingandCleaningData.txt", header = TRUE)** to read the Tidy Data Table of means into R.
-Additional details of the *run_analysis.r* script can be found in the *CodeBook.md.*
+Additional details of the *run_analysis.r* script can be found in the *CodeBook.md*.
 
 
 

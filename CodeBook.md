@@ -1,18 +1,11 @@
----
-title: "CodeBook"
-author: "DataMX"
-date: "October 24, 2014"
-output: html_document
----
-  
 This is the CodeBook for the Getting and Cleaning Data Course project.
 
 **Data**
 ---
-The data was obtained [here]
+The data was obtained [here.]
 (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) 
 
-Description of the data can be found at the [UCI Machine Learning Repository]
+Description of the data can be found at the [UCI Machine Learning Repository.]
 (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
 Data was downloaded and unziped into the directory "UCI HAR Dataset."  Details of data collection and initial processing are available either through the url above or located in the *README.txt* and *features_info.txt* files in the "UCI HAR Dataset directory.
@@ -22,10 +15,10 @@ Data was downloaded and unziped into the directory "UCI HAR Dataset."  Details o
   
 Data processing with the *run_analysis.r* script did the following steps:
 
-1) Check that "UCI HAR Dataset" directory is in the working directory and then change  into "UCI HAR Dataset" directory.  
-   
+1) Check that "UCI HAR Dataset" directory is in the working directory and then change into "UCI HAR Dataset" directory.  
+    
 2) Read in training *(train/X_train.txt)* and then test *(test/X_test.txt)* processed data without ids or activity data.  Script does not read in raw data as it's not used in the script.  Combine the test and training using *rbind*.  
-
+  
 3) Read in column names located in *features.txt*. Use subsetting and *gsub* command to make column names more descriptive and Human readable.  I used *gsub* to do the following:
       -   Change all occurances of mean and std to the same format and expand std to StandardDeviation
       -   Remove () and - for easier column selection in R
@@ -33,21 +26,22 @@ Data processing with the *run_analysis.r* script did the following steps:
       -   Replace Acc with Acceleration, Gyro with AngularVelocity, Mag with Magnitude
       -   Replace - with 'In'
       -   Adjust remaining names to CamelCase for better Human readability without spaces
-      -   Replace (angles, gravity) etc. with _angles.gravity_ for easier column selection   
+      -   Replace (angles, gravity) etc. with _angles.gravity_ for easier column selection 
+        
 4) Change column names of data set to match column names derived from *features.txt*.
         
-5) Find index of all columns that have mean or standard deviation in them. I found all instances of mean or standard deviation. I am not familar with this type of data, so I kept all columns that had mean or standard deviation.  I then subsetted the data based on the index I just created.                     
-
+5) Creat and index of all columns that have mean or standard deviation in them using *grep*. I found all instances of mean or standard deviation. I am not familar with this type of data, so I kept all columns that had mean or standard deviation.  I then subsetted the data based on the index I just created.                     
+  
 6) Read in activity labels *activity_labels.txt* and converted labels to lower case. 
-         
-7) Read in participant's activity codes and combine training *(train/y_train.txt)* and *(test setstest/y_test.txt)*. Use same order as before with *rbind* so data stays in same order (train then test).  Use subsetting to convert integer activity type to text version.  Name column ActivityType.
+      
+7) Read in participant's activity codes and combine training *(train/y_train.txt)* and *(test setstest/y_test.txt)*. Use the same order as before with *rbind* so data stays in same order (train then test).  Use subsetting to convert integer activity type to text version.  Name column ActivityType.
 
-8) Read in Subject ID and combine training *(train/subject_train.txt)* and test *(test/subject_test.txt)* sets then name column SubjectID. Maintain train and test set order when combining data.
+8) Read in Subject ID and combine training *(train/subject_train.txt)* and test *(test/subject_test.txt)* sets using *rbind* then name column SubjectID. Maintain train and test set in the same order when combining data.
 
 9) Use *cbind* to add SubjectID and ActivityType columns to data set in Step 2.
 Now, I have a tidy, descriptively named, complete data set with mean and std variables along with "SubjectID", and "ActivityType".
 
-10)  Generate new table containing means of each column by "SubjectID" and by "ActivityType"  This step used chaining and dplyr to group the data and calculate means.
+10)  Generate new table containing means of each column by "SubjectID" and by "ActivityType"  This step used chaining and dplyr to group the data by SubjectId and ActivityType and then calculate the mean of each column.
       
 11)  Write out table to *GettingandCleaningData.txt* in "UCI HAR Dataset" directory.          
 Table can be read with 'read.table("GettingandCleaningData.txt", header = TRUE)'
@@ -58,10 +52,7 @@ Table can be read with 'read.table("GettingandCleaningData.txt", header = TRUE)'
 
 Variables 3-88 were calculated as means by SubjectId and ActivityType
 
-I expanded the variable names and used CamelCase to help readabilty since we can't use spaces.  I swapped underscores for parentheses as R can recognize them even if they are not preferred.  I swapped commas to periods, as well.  From README.txt described the raw data units as either standard gravity units,'g', radians/sec for angular velocity. The processed data was normalized and bounded [-1 to 1].  Additional details about the variables can be found in the initial features_info.txt included in the "UCI HAR Dataset" 
-
-
-
+I expanded the abbreviations of the variable names and used CamelCase to help Human readabilty since we can't use spaces.  I swapped underscores for parentheses as R can recognize underscores even if they are not preferred.  I swapped commas to periods, as well.  The *README.txt* described the raw data units as either standard gravity units,'g', or radians/sec for angular velocity. The processed data was normalized and bounded [-1 to 1].  Additional details about the variables and how the measurments were transformed from the raw data can be found in the initial *features_info.txt* included in the "UCI HAR Dataset." 
 
 
 1 SubjectID  

@@ -27,7 +27,6 @@ Data processing with the *run_analysis.r* script did the following steps:
 *   Replace - with 'In'
 *   Adjust remaining names to CamelCase for better Human readability without spaces
 *   Replace (angles, gravity) etc. with _angles.gravity_ for easier column selection 
-*   
 
 4) Change column names of data set to match column names derived from *features.txt*.
         

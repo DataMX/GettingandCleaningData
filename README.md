@@ -9,14 +9,14 @@ The project's purpose was to show your ability to collect, work with and clean a
 Data was found [here.]
 (https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip) 
   
-Description of initial processing can be found at [UCI Machine Learning Repository]
+Description of initial processing can be found at [UCI Machine Learning Repository.]
 (http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
   
 The *run_analysis.r* script assumes that you have downloaded the above data into your working directory and now have a directory "UCI HAR Dataset" within your working directory.  The script will stop with an error message if you do not have the "UCI HAR Dataset"" in your working directory.  It will also stop if you have set your working directory to the "UCI HAR Dataset" directory.
   
 The *run_analysis.r* script assumes you have the *data.tables, tidyr, dplyr and R.utils* packages installed and will load those librarys for you.
   
-The *run_analysis.r* script will complete all the steps required in the course project webpage.  Instructions below are directly from [course project webpage descrition.](https://class.coursera.org/getdata-008/human_grading/view/courses/972586/assessments/3/submissions)
+The *run_analysis.r* script will complete all the steps required in the course project webpage.  Instructions below are directly from [course project webpage description.](https://class.coursera.org/getdata-008/human_grading/view/courses/972586/assessments/3/submissions)
   
     1. Merges the training and the test sets to create one data set.
     2. Extracts only the measurements on the mean and standard deviation for
